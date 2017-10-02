@@ -1,6 +1,8 @@
 import webpack from 'webpack';
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash';
+
 
 export default {
   devtool: 'source-map',
@@ -12,9 +14,13 @@ export default {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js'
   },
   plugins: [
+    // Retorna un hash para cada bundle, para que sus nombres cambien si el contenido cambia
+    new WebpackMd5Hash(),
+
+    // Opciones de carga
     new webpack.LoaderOptionsPlugin({
         debug: true,
         noInfo: false,
