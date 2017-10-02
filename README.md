@@ -35,3 +35,6 @@ Testin
     Mocha framework para unit e integration testing
     Assertion library:
         Chai, permite describir pruebas en un lenguaje mas natural
+
+Continous Integration
+    Travis CI
