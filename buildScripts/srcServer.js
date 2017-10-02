@@ -17,7 +17,16 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '../src/index.html'));
-})
+});
+
+app.get('/users', function(req, res){
+    // Hardcoded, en el mundo real llamaria a datos desde una BD
+    res.json([
+        {"id": 1,"firstname":"Hector", "lastname":"Latorre", "email":"hola@hola.cl"},
+        {"id": 2,"firstname":"Isidora","lastname":"Guajardo", "email":"hola@hola.cl"},
+        {"id": 3,"firstname":"Micaela", "lastname":"Martinez", "email":"hola@hola.cl"}
+    ]);
+});
 
 app.listen(port, function(err){
     if (err)

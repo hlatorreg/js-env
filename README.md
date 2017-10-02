@@ -31,10 +31,18 @@ Bundling
 Linting
     ESLint: Nos avisa de errores sintaxicos al momento de guardar un archivo, facil configuracion en .eslintrc.json
 
-Testin
+Testing
     Mocha framework para unit e integration testing
     Assertion library:
         Chai, permite describir pruebas en un lenguaje mas natural
+    Helpers:
+        JSDOM, "headless" browser for testing
 
 Continous Integration
-    Travis CI
+    Travis CI, conecta con github, prueba si el build del ultimo push corre.
+    Appveyor (Windows)
+
+HTTP Calls
+    Herramienta (fetch, request, http, otros paquetes de node, axiom como solucion mas completa)
+    Centralizar nuestras llamadas, orden y consistencia.
+    
